@@ -100,9 +100,7 @@ GROQ_MODEL=openai/gpt-oss-120b
 OLLAMA_BASE_URL=http://localhost:11434/v1
 OLLAMA_MODEL=llama3.1:8b
 
-RAZORPAY_KEY_ID=rzp_test_your_key_id
-RAZORPAY_KEY_SECRET=rzp_test_your_key_secret
-RAZORPAY_WEBHOOK_SECRET=your_webhook_secret
+
 ```
 
 None of the AI provider keys are required. Leave them all blank and the system still works, it just falls back to the deterministic rule engine for every case.
