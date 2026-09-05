@@ -8,8 +8,7 @@ Businesses lose money quietly. A payment fails, an invoice goes overdue, and nob
 
 It's not just a dashboard that shows you a problem. It actually diagnoses the failure, picks the right recovery action, checks that action against compliance rules, executes it in a sandbox environment, and writes down exactly what it did and why. You can open any case and read the full story of what happened to it, step by step.
 
-![Dashboard hero](<img width="1901" height="912" alt="Screenshot 2026-09-05 191000" src="https://github.com/user-attachments/assets/c83a3512-4a6b-4402-98aa-8915a9989e61" />
-)
+![Dashboard hero](assets/dashboard_hero.png)
 *The main dashboard: live outcome feed, key recovery metrics, and zero guardrail violations.*
 
 ## Results
@@ -44,8 +43,7 @@ The order is: a local model running on the machine through Ollama, then Claude, 
 
 Every diagnosis and decision records which one of these actually produced it. We've tested this two ways: a full run where the local model handled every single case with no cloud calls at all, and a full run where the cloud providers correctly took over from each other as earlier ones hit real credit and quota limits. Both worked.
 
-![Provider breakdown](<img width="1897" height="915" alt="Screenshot 2026-09-05 191022" src="https://github.com/user-attachments/assets/ce095091-6978-4dc5-ac86-69f58b52ed12" />
-)
+![Provider breakdown](assets/d2.png)
 *Multi-provider resilience in action. This run resolved entirely through the local Ollama model, with the rule engine handling B2B promise-to-pay transitions.*
 
 ## Tech stack
@@ -150,14 +148,12 @@ Open `http://localhost:3000`.
 
 ## Trying it out yourself
 
-![Case list](<img width="1900" height="914" alt="Screenshot 2026-09-05 191040" src="https://github.com/user-attachments/assets/65796b83-88ec-46ac-8330-27ee36e5c0d7" />
-)
+![Case list](assets/d3.png)
 *Every case tracked with its leak type, recovery status, and customer contact preference. Note the opted-out customer above, correctly excluded from contact.*
 
 Seed some data first. Go to Simulation Control, type in a number like 15, and click Clear and Seed Events. This wipes whatever was there before and generates fresh cases with full pipeline traces.
 
-![Simulation control](<img width="1901" height="915" alt="Screenshot 2026-09-05 191059" src="https://github.com/user-attachments/assets/e2daeb81-6c47-40ff-9a31-c9b4d1127b41" />
-)
+![Simulation control](assets/d4.png)
 *The Simulation Control Room includes built-in edge case test workflows for verifying guardrails and Promise-to-Pay reactivation, so testing is part of the product itself, not a separate script.*
 
 To see the compliance guardrails actually block something, click the Night preset in the Time Travel Console. Then open a case and look at Stage 4. You'll see the calling window check fail, because it's outside the allowed hours. The recovery action will sit there as pending. Click the Morning preset, and go back to that case. The pending action will now show as executed.
