@@ -1,0 +1,122 @@
+[
+  {
+    "failure_code": "BAD_REQUEST_PAYMENT_INSUFFICIENT_FUNDS",
+    "failure_description": "The customer account has insufficient funds to complete this transaction.",
+    "expected_root_cause": "insufficient_funds",
+    "expected_severity": "soft"
+  },
+  {
+    "failure_code": "BAD_REQUEST_PAYMENT_CARD_EXPIRED",
+    "failure_description": "Card expiry month and year is in the past.",
+    "expected_root_cause": "expired_card",
+    "expected_severity": "hard"
+  },
+  {
+    "failure_code": "BAD_REQUEST_PAYMENT_CARD_STOLEN_OR_LOST",
+    "failure_description": "Transaction blocked by issuer bank because the card is reported stolen or lost.",
+    "expected_root_cause": "stolen_or_lost_card",
+    "expected_severity": "hard"
+  },
+  {
+    "failure_code": "BAD_REQUEST_PAYMENT_CARD_CLOSED",
+    "failure_description": "The card account has been closed by the user or bank.",
+    "expected_root_cause": "closed_account",
+    "expected_severity": "hard"
+  },
+  {
+    "failure_code": "BAD_REQUEST_PAYMENT_BANK_SYSTEM_OUTAGE",
+    "failure_description": "Issuer bank network is down. Please try again later.",
+    "expected_root_cause": "bank_system_outage",
+    "expected_severity": "soft"
+  },
+  {
+    "failure_code": "BAD_REQUEST_PAYMENT_TIMED_OUT",
+    "failure_description": "The connection to the issuing bank timed out during authorization.",
+    "expected_root_cause": "gateway_timeout",
+    "expected_severity": "soft"
+  },
+  {
+    "failure_code": "BAD_REQUEST_PAYMENT_OTP_VALIDATION_FAILED",
+    "failure_description": "One-Time Password entered by the customer was incorrect.",
+    "expected_root_cause": "otp_validation_failed",
+    "expected_severity": "soft"
+  },
+  {
+    "failure_code": "BAD_REQUEST_PAYMENT_DECLINED_BY_BANK",
+    "failure_description": "The bank has declined this transaction without specifying a granular error.",
+    "expected_root_cause": "generic_bank_decline",
+    "expected_severity": "soft"
+  },
+  {
+    "failure_code": "BAD_REQUEST_PAYMENT_INSUFFICIENT_FUNDS",
+    "failure_description": "Failed due to lack of balance.",
+    "expected_root_cause": "insufficient_funds",
+    "expected_severity": "soft"
+  },
+  {
+    "failure_code": "BAD_REQUEST_PAYMENT_CARD_EXPIRED",
+    "failure_description": "Expired card.",
+    "expected_root_cause": "expired_card",
+    "expected_severity": "hard"
+  },
+  {
+    "failure_code": "BAD_REQUEST_PAYMENT_CARD_STOLEN_OR_LOST",
+    "failure_description": "Lost card reported.",
+    "expected_root_cause": "stolen_or_lost_card",
+    "expected_severity": "hard"
+  },
+  {
+    "failure_code": "BAD_REQUEST_PAYMENT_CARD_CLOSED",
+    "failure_description": "Account closed.",
+    "expected_root_cause": "closed_account",
+    "expected_severity": "hard"
+  },
+  {
+    "failure_code": "BAD_REQUEST_PAYMENT_BANK_SYSTEM_OUTAGE",
+    "failure_description": "Temporary bank error.",
+    "expected_root_cause": "bank_system_outage",
+    "expected_severity": "soft"
+  },
+  {
+    "failure_code": "BAD_REQUEST_PAYMENT_TIMED_OUT",
+    "failure_description": "Request timeout.",
+    "expected_root_cause": "gateway_timeout",
+    "expected_severity": "soft"
+  },
+  {
+    "failure_code": "BAD_REQUEST_PAYMENT_OTP_VALIDATION_FAILED",
+    "failure_description": "Incorrect OTP.",
+    "expected_root_cause": "otp_validation_failed",
+    "expected_severity": "soft"
+  },
+  {
+    "failure_code": "BAD_REQUEST_PAYMENT_DECLINED_BY_BANK",
+    "failure_description": "Blocked by bank rules.",
+    "expected_root_cause": "generic_bank_decline",
+    "expected_severity": "soft"
+  },
+  {
+    "failure_code": "BAD_REQUEST_PAYMENT_INSUFFICIENT_FUNDS",
+    "failure_description": "Low balance in debit card.",
+    "expected_root_cause": "insufficient_funds",
+    "expected_severity": "soft"
+  },
+  {
+    "failure_code": "BAD_REQUEST_PAYMENT_CARD_EXPIRED",
+    "failure_description": "Card has reached its expiration date.",
+    "expected_root_cause": "expired_card",
+    "expected_severity": "hard"
+  },
+  {
+    "failure_code": "BAD_REQUEST_PAYMENT_BANK_SYSTEM_OUTAGE",
+    "failure_description": "Bank servers failed to respond.",
+    "expected_root_cause": "bank_system_outage",
+    "expected_severity": "soft"
+  },
+  {
+    "failure_code": "BAD_REQUEST_PAYMENT_TIMED_OUT",
+    "failure_description": "Network timeout waiting for 3DS response.",
+    "expected_root_cause": "gateway_timeout",
+    "expected_severity": "soft"
+  }
+]
