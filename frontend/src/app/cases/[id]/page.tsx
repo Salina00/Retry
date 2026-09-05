@@ -441,9 +441,14 @@ export default function CaseDetail({ params }: CaseDetailProps) {
                         <div>
                           <span className="text-slate-400 font-semibold uppercase tracking-wider text-[10px]">Recovery Likelihood</span>
                           <p className="font-bold text-slate-900 mt-0.5">
-                            {log.payload.recovery_probability !== undefined && !isNaN(log.payload.recovery_probability)
-                              ? `${(log.payload.recovery_probability * 100).toFixed(0)}%`
-                              : "N/A"}
+                            {(() => {
+                              const p = log.payload?.recovery_probability;
+                              if (p === undefined || p === null || p === "") return "N/A";
+                              const num = typeof p === "number" ? p : parseFloat(String(p).replace("%", ""));
+                              if (isNaN(num)) return "N/A";
+                              const pct = num <= 1.0 ? num * 100 : num;
+                              return `${pct.toFixed(0)}%`;
+                            })()}
                           </p>
                         </div>
                       </div>

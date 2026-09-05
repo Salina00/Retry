@@ -126,6 +126,16 @@ def run_all_guardrails(
         if override_log.payload.get("root_cause") == "manual_reactivation" and override_log.payload.get("compliance_override") is True:
             has_override = True
 
+    if not has_override:
+        compliance_check = db.query(AuditLogEntry).filter(
+            AuditLogEntry.case_id == case_id,
+            AuditLogEntry.step == "guardrail_check"
+        ).all()
+        for entry in compliance_check:
+            if isinstance(entry.payload, dict) and entry.payload.get("event") == "compliance_override":
+                has_override = True
+                break
+
     checks = []
     
     # 1. Calling Window

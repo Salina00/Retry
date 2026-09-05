@@ -144,13 +144,13 @@ def reactivate_case(case_id: str, override: bool = False, db: Session = Depends(
         db.add(audit_compliance)
         db.flush()
 
-    # Generate manual reactivation diagnosis
+    # Generate manual reactivation diagnosis preserving original severity
     diag = Diagnosis(
         case_id=case_id,
         root_cause="manual_reactivation",
-        severity="soft",
-        recovery_probability=0.50,
-        reasoning="Recovery sequence manually reactivated by finance user."
+        severity="hard" if is_hard_decline else "soft",
+        recovery_probability=0.0 if is_hard_decline else 0.50,
+        reasoning="Recovery sequence manually reactivated by finance user." + (" (Explicit compliance override applied for hard decline)" if has_compliance_override else "")
     )
     db.add(diag)
     db.flush()
