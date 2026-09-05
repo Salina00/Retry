@@ -170,7 +170,7 @@ Everything runs against Razorpay's test mode. No real transactions happen anywhe
 
 The local Ollama provider only works when you're running this on your own machine. If you deploy this somewhere else, it will correctly notice Ollama isn't reachable and fall through to the cloud providers instead.
 
-There's no real login system and no support for multiple businesses using this at once. This is a working prototype of the recovery pipeline, not a finished product.
+Authentication is included for demonstration (with 1-click demo auto-fill and role selection), but there is no multi-tenant data isolation between multiple businesses. This is a working prototype of the recovery pipeline, not a commercial multi-tenant SaaS.
 
 ## License
 
