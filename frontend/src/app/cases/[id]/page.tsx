@@ -322,7 +322,7 @@ export default function CaseDetail({ params }: CaseDetailProps) {
             <p className="text-xs text-slate-400 font-medium mt-0.5">
               {caseData.leak_type === "receivable_overdue" 
                 ? "Inbound B2B receivable invoice marked overdue and routed by rule engine."
-                : "Inbound failed checkout telemetry caught from payment gateway and routed by rule engine."}
+                : "Inbound payment failure telemetry caught from payment gateway and routed by rule engine."}
             </p>
           </div>
           

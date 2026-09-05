@@ -164,7 +164,7 @@ Open any case's detail page and scroll through all six stages. Each diagnosis an
 
 ## What this doesn't do
 
-This is scoped narrowly on purpose. It handles payment failures and a promise to pay tracker for overdue B2B receivables. It does not handle checkout abandonment, subscription specific flows, mandate retry sequencing, or voice based recovery. We chose to build one thing properly instead of several things shallowly.
+We deliberately focused on two directions: payment degradation with root-cause diagnosis and recovery, and a B2B Promise-to-Pay tracker for overdue receivables. Checkout abandonment, subscription-specific flows, mandate retry sequencing, and Hinglish voice recovery were out of scope for this build. We chose to build these two workflows properly with a live audit trail and deterministic guardrails rather than covering multiple directions shallowly.
 
 Everything runs against Razorpay's test mode. No real transactions happen anywhere in this project.
 
